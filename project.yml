@@ -49,6 +49,7 @@ targets:
         CFBundleDocumentTypes:
           - CFBundleTypeName: Markdown Document
             CFBundleTypeRole: Viewer
+            NSDocumentClass: $(PRODUCT_MODULE_NAME).MarkdownDocument
             LSHandlerRank: Alternate
             LSItemContentTypes:
               - net.daringfireball.markdown
