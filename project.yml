@@ -25,6 +25,22 @@ targets:
       - package: MarkdownRenderer
       - target: QuickLookExtension
         embed: true
+      - target: mdview
+        embed: false
+    postBuildScripts:
+      - script: |
+          # Copy mdview CLI into app bundle Resources
+          cp "${BUILT_PRODUCTS_DIR}/mdview" "${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/Resources/mdview" 2>/dev/null || true
+          # Copy render resources for CLI standalone HTML export
+          BUNDLE_PATH=$(find "${BUILT_PRODUCTS_DIR}" -name "MarkdownRenderer_MarkdownRenderer.bundle" -maxdepth 1)
+          if [ -d "$BUNDLE_PATH/Contents/Resources/Resources" ]; then
+            cp "$BUNDLE_PATH/Contents/Resources/Resources/render.html" "${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/Resources/" 2>/dev/null || true
+            cp "$BUNDLE_PATH/Contents/Resources/Resources/style.css" "${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/Resources/" 2>/dev/null || true
+            cp "$BUNDLE_PATH/Contents/Resources/Resources/"*.min.js "${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/Resources/" 2>/dev/null || true
+            cp "$BUNDLE_PATH/Contents/Resources/Resources/"*.min.css "${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/Resources/" 2>/dev/null || true
+            cp -r "$BUNDLE_PATH/Contents/Resources/Resources/fonts" "${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/Resources/" 2>/dev/null || true
+          fi
+        name: Copy mdview CLI and resources into app bundle
     info:
       path: MDViewer/Info.plist
       properties:

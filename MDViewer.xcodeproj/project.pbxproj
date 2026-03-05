@@ -25,6 +25,13 @@
 			remoteGlobalIDString = A2933DDE5204B34084E38C8A;
 			remoteInfo = QuickLookExtension;
 		};
+		C4A7FD4A8AE92612AF3EA42B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DF200EDE3B21792C4B8F45B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07A38DAAA0C02A43D8021F2C;
+			remoteInfo = mdview;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -163,11 +170,13 @@
 				315F4B5453DD4E94AF9A3AE7 /* Sources */,
 				68857ED4AD826C25C801ABDB /* Frameworks */,
 				B54334E29F7EE302910DF3C1 /* Embed Foundation Extensions */,
+				1B7AC6CB2AC561A7F0C487F2 /* Copy mdview CLI and resources into app bundle */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				783AF11AAD514BFD830DE042 /* PBXTargetDependency */,
+				6DE872E2EB5BD196EA33AC7E /* PBXTargetDependency */,
 			);
 			name = MDViewer;
 			packageProductDependencies = (
@@ -229,6 +238,27 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1B7AC6CB2AC561A7F0C487F2 /* Copy mdview CLI and resources into app bundle */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy mdview CLI and resources into app bundle";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Copy mdview CLI into app bundle Resources\ncp \"${BUILT_PRODUCTS_DIR}/mdview\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/Resources/mdview\" 2>/dev/null || true\n# Copy render resources for CLI standalone HTML export\nBUNDLE_PATH=$(find \"${BUILT_PRODUCTS_DIR}\" -name \"MarkdownRenderer_MarkdownRenderer.bundle\" -maxdepth 1)\nif [ -d \"$BUNDLE_PATH/Contents/Resources/Resources\" ]; then\n  cp \"$BUNDLE_PATH/Contents/Resources/Resources/render.html\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/Resources/\" 2>/dev/null || true\n  cp \"$BUNDLE_PATH/Contents/Resources/Resources/style.css\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/Resources/\" 2>/dev/null || true\n  cp \"$BUNDLE_PATH/Contents/Resources/Resources/\"*.min.js \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/Resources/\" 2>/dev/null || true\n  cp \"$BUNDLE_PATH/Contents/Resources/Resources/\"*.min.css \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/Resources/\" 2>/dev/null || true\n  cp -r \"$BUNDLE_PATH/Contents/Resources/Resources/fonts\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/Resources/\" 2>/dev/null || true\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		315F4B5453DD4E94AF9A3AE7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -259,6 +289,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		6DE872E2EB5BD196EA33AC7E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07A38DAAA0C02A43D8021F2C /* mdview */;
+			targetProxy = C4A7FD4A8AE92612AF3EA42B /* PBXContainerItemProxy */;
+		};
 		783AF11AAD514BFD830DE042 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A2933DDE5204B34084E38C8A /* QuickLookExtension */;
