@@ -1,0 +1,100 @@
+name: MDViewer
+options:
+  bundleIdPrefix: net.fiddlythings
+  deploymentTarget:
+    macOS: "10.15"
+  xcodeVersion: "15.0"
+
+packages:
+  MarkdownRenderer:
+    path: MarkdownRenderer
+
+targets:
+  MDViewer:
+    type: application
+    platform: macOS
+    sources:
+      - MDViewer
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: net.fiddlythings.MDViewer
+        ARCHS: "$(ARCHS_STANDARD)"
+        ENABLE_HARDENED_RUNTIME: true
+        COMBINE_HIDPI_IMAGES: true
+    dependencies:
+      - package: MarkdownRenderer
+      - target: QuickLookExtension
+        embed: true
+    info:
+      path: MDViewer/Info.plist
+      properties:
+        NSPrincipalClass: NSApplication
+        LSMinimumSystemVersion: $(MACOSX_DEPLOYMENT_TARGET)
+        CFBundleDocumentTypes:
+          - CFBundleTypeName: Markdown Document
+            CFBundleTypeRole: Viewer
+            LSHandlerRank: Alternate
+            LSItemContentTypes:
+              - net.daringfireball.markdown
+              - public.plain-text
+            CFBundleTypeExtensions:
+              - md
+              - markdown
+              - mdown
+              - mkd
+        UTImportedTypeDeclarations:
+          - UTTypeIdentifier: net.daringfireball.markdown
+            UTTypeDescription: Markdown Document
+            UTTypeConformsTo:
+              - public.plain-text
+            UTTypeTagSpecification:
+              public.filename-extension:
+                - md
+                - markdown
+                - mdown
+                - mkd
+    entitlements:
+      path: MDViewer/MDViewer.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+        com.apple.security.network.client: true
+        com.apple.security.files.user-selected.read-only: true
+
+  QuickLookExtension:
+    type: app-extension
+    platform: macOS
+    sources:
+      - QuickLookExtension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: net.fiddlythings.MDViewer.QuickLookExtension
+        ARCHS: "$(ARCHS_STANDARD)"
+        ENABLE_HARDENED_RUNTIME: true
+    dependencies:
+      - package: MarkdownRenderer
+    info:
+      path: QuickLookExtension/Info.plist
+      properties:
+        LSMinimumSystemVersion: $(MACOSX_DEPLOYMENT_TARGET)
+        NSExtension:
+          NSExtensionAttributes:
+            QLSupportedContentTypes:
+              - net.daringfireball.markdown
+              - public.plain-text
+            QLSupportsSearchableItems: false
+          NSExtensionPointIdentifier: com.apple.quicklook.preview
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).PreviewViewController
+    entitlements:
+      path: QuickLookExtension/QuickLookExtension.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+
+  mdview:
+    type: tool
+    platform: macOS
+    sources:
+      - mdview-cli
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: net.fiddlythings.mdview
+        ARCHS: "$(ARCHS_STANDARD)"

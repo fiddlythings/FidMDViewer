@@ -67,7 +67,7 @@ class MarkdownDocument: NSDocument {
         source.setCancelHandler { [weak self] in
             guard let self = self else { return }
             if self.fileDescriptor >= 0 {
-                close(self.fileDescriptor)
+                Darwin.close(self.fileDescriptor)
                 self.fileDescriptor = -1
             }
         }

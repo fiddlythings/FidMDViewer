@@ -1,5 +1,6 @@
 import Cocoa
 import WebKit
+import MarkdownRenderer
 
 class MarkdownWindowController: NSWindowController, WKNavigationDelegate {
     private var webView: WKWebView!
