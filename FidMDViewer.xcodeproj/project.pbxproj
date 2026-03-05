@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B5AF6F4BAC69CD2E2BEFF65 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CA9C3677FF5EA93F9BA138B1 /* Credits.rtf */; };
 		20E9588E92783674F576EF4D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E99830350A824909EB9800E /* main.swift */; };
 		2559D909FD300860CDD81E1A /* MarkdownWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156EAA35171EFB2F09DCC391 /* MarkdownWindowController.swift */; };
 		35F31938FCE977A0A5AFF892 /* MarkdownRenderer in Frameworks */ = {isa = PBXBuildFile; productRef = D10198BC8E990349EB183305 /* MarkdownRenderer */; };
@@ -62,6 +63,7 @@
 		B636546F3AF8483E7AEBC61F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BA0699033CF15EFF7E9FB310 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C9DABA74B902A5032068F955 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CA9C3677FF5EA93F9BA138B1 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		D03A7294707E0F46F137B875 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		D714E1F68F3FC41638824D77 /* QuickLookExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuickLookExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				C9DABA74B902A5032068F955 /* AppDelegate.swift */,
+				CA9C3677FF5EA93F9BA138B1 /* Credits.rtf */,
 				32A6077A9758FF4C5A8239B7 /* FidMDViewer.entitlements */,
 				B636546F3AF8483E7AEBC61F /* Info.plist */,
 				4840880369BB1C79509509BD /* main.swift */,
@@ -190,6 +193,7 @@
 			buildConfigurationList = 60C38B8881CA97390DC61052 /* Build configuration list for PBXNativeTarget "FidMDViewer" */;
 			buildPhases = (
 				E4EA80F66076E3ADF7191678 /* Sources */,
+				113C46DBCDA47BADD13B4FFF /* Resources */,
 				4481801270EDAF712A0880AC /* Frameworks */,
 				9C704830B220C5DDA8784B4E /* Embed Foundation Extensions */,
 				7C0FB972AA447F67E49DA66B /* Copy mdview CLI and resources into app bundle */,
@@ -240,6 +244,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		113C46DBCDA47BADD13B4FFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B5AF6F4BAC69CD2E2BEFF65 /* Credits.rtf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		7C0FB972AA447F67E49DA66B /* Copy mdview CLI and resources into app bundle */ = {
