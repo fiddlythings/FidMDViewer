@@ -16,7 +16,11 @@ A native macOS markdown viewer with syntax highlighting, math rendering, and dia
 
 ## Install
 
-Download the latest DMG from [Releases](https://github.com/fiddlythings/FidMDViewer/releases), or build from source:
+Download the latest DMG from [Releases](https://github.com/fiddlythings/FidMDViewer/releases). Open the DMG and drag FidMDViewer to your Applications folder.
+
+> **Note:** The app is not yet notarized. On first launch, right-click > Open and click "Open" in the Gatekeeper dialog.
+
+Or build from source:
 
 ```bash
 # Requires Xcode and xcodegen
