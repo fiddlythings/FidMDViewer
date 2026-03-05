@@ -44,6 +44,7 @@ targets:
     info:
       path: FidMDViewer/Info.plist
       properties:
+        CFBundleIconFile: AppIcon
         NSPrincipalClass: NSApplication
         LSMinimumSystemVersion: $(MACOSX_DEPLOYMENT_TARGET)
         NSHumanReadableCopyright: "Created by Reagen Ward — rbward@gmail.com"

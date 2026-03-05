@@ -16,6 +16,7 @@
 		7780F6F3265225E827465F65 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A7294707E0F46F137B875 /* PreviewViewController.swift */; };
 		7C614EBFD1F03E9E8ECF5310 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DABA74B902A5032068F955 /* AppDelegate.swift */; };
 		7C70D4D53C908B9E70E8AC53 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4840880369BB1C79509509BD /* main.swift */; };
+		E305FF5FE3B009880BF930D7 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0C44D8C851E59ABE109B0267 /* AppIcon.icns */; };
 		F41DACC9D81DC0F02EF16810 /* QuickLookExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7E7B66F6545A5317945A350B /* QuickLookExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C44D8C851E59ABE109B0267 /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AppIcon.icns; sourceTree = "<group>"; };
 		0E99830350A824909EB9800E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		156EAA35171EFB2F09DCC391 /* MarkdownWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownWindowController.swift; sourceTree = "<group>"; };
 		32A6077A9758FF4C5A8239B7 /* FidMDViewer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FidMDViewer.entitlements; sourceTree = "<group>"; };
@@ -106,6 +108,14 @@
 			name = Packages;
 			sourceTree = "<group>";
 		};
+		D388A2BFCC78C1036B01CC66 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0C44D8C851E59ABE109B0267 /* AppIcon.icns */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		D601F0C69EDCD6CC8BC71767 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +155,7 @@
 				4840880369BB1C79509509BD /* main.swift */,
 				525359DBF1BE86989072A213 /* MarkdownDocument.swift */,
 				156EAA35171EFB2F09DCC391 /* MarkdownWindowController.swift */,
+				D388A2BFCC78C1036B01CC66 /* Resources */,
 			);
 			path = FidMDViewer;
 			sourceTree = "<group>";
@@ -250,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E305FF5FE3B009880BF930D7 /* AppIcon.icns in Resources */,
 				0B5AF6F4BAC69CD2E2BEFF65 /* Credits.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
