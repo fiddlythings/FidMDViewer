@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="katex.min.css">
+    <link rel="stylesheet" href="highlight-github.min.css"
+          media="(prefers-color-scheme: light)">
+    <link rel="stylesheet" href="highlight-github-dark.min.css"
+          media="(prefers-color-scheme: dark)">
+    <script src="markdown-it.min.js"></script>
+    <script src="markdown-it-task-lists.min.js"></script>
+    <script src="highlight.min.js"></script>
+    <script src="katex.min.js"></script>
+    <script src="auto-render.min.js"></script>
+    <script src="mermaid.min.js"></script>
+</head>
+<body>
+    <div id="content"></div>
+    <script>
+        // Initialize markdown-it with highlight.js
+        var md = window.markdownit({
+            html: true,
+            linkify: true,
+            typographer: true,
+            highlight: function(str, lang) {
+                if (lang && hljs.getLanguage(lang)) {
+                    try {
+                        return hljs.highlight(str, { language: lang }).value;
+                    } catch (_) {}
+                }
+                return ''; // use external default escaping
+            }
+        }).use(window.markdownitTaskLists);
+
+        function renderMarkdown(markdownText) {
+            // Render markdown to HTML
+            var html = md.render(markdownText);
+            document.getElementById('content').innerHTML = html;
+
+            // Render KaTeX math expressions
+            renderMathInElement(document.getElementById('content'), {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false},
+                    {left: '\\[', right: '\\]', display: true}
+                ],
+                throwOnError: false
+            });
+
+            // Render Mermaid diagrams
+            // Find code blocks with class "language-mermaid" and convert them
+            var codeBlocks = document.querySelectorAll('pre code.language-mermaid');
+            codeBlocks.forEach(function(block, index) {
+                var pre = block.parentElement;
+                var div = document.createElement('div');
+                div.className = 'mermaid';
+                div.textContent = block.textContent;
+                pre.parentElement.replaceChild(div, pre);
+            });
+
+            mermaid.initialize({
+                startOnLoad: false,
+                theme: window.matchMedia('(prefers-color-scheme: dark)').matches
+                    ? 'dark' : 'default'
+            });
+            mermaid.run();
+        }
+
+        // Listen for theme changes to re-render Mermaid
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
+            // Re-render Mermaid with new theme
+            var mermaidDivs = document.querySelectorAll('.mermaid');
+            if (mermaidDivs.length > 0) {
+                mermaid.initialize({
+                    startOnLoad: false,
+                    theme: window.matchMedia('(prefers-color-scheme: dark)').matches
+                        ? 'dark' : 'default'
+                });
+                // Mermaid needs IDs cleared to re-render
+                mermaidDivs.forEach(function(div) {
+                    div.removeAttribute('data-processed');
+                });
+                mermaid.run();
+            }
+        });
+
+        // renderMarkdown will be called from Swift via evaluateJavaScript
+    </script>
+</body>
+</html>
