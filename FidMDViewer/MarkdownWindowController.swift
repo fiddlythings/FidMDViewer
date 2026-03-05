@@ -14,7 +14,7 @@ class MarkdownWindowController: NSWindowController, WKNavigationDelegate {
             defer: false
         )
         window.center()
-        window.setFrameAutosaveName("MDViewerWindow")
+        window.setFrameAutosaveName("FidMDViewerWindow")
         window.minSize = NSSize(width: 400, height: 300)
 
         self.init(window: window)

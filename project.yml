@@ -1,4 +1,4 @@
-name: MDViewer
+name: FidMDViewer
 options:
   bundleIdPrefix: net.fiddlythings
   deploymentTarget:
@@ -10,14 +10,14 @@ packages:
     path: MarkdownRenderer
 
 targets:
-  MDViewer:
+  FidMDViewer:
     type: application
     platform: macOS
     sources:
-      - MDViewer
+      - FidMDViewer
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: net.fiddlythings.MDViewer
+        PRODUCT_BUNDLE_IDENTIFIER: net.fiddlythings.FidMDViewer
         ARCHS: "$(ARCHS_STANDARD)"
         ENABLE_HARDENED_RUNTIME: true
         COMBINE_HIDPI_IMAGES: true
@@ -42,7 +42,7 @@ targets:
           fi
         name: Copy mdview CLI and resources into app bundle
     info:
-      path: MDViewer/Info.plist
+      path: FidMDViewer/Info.plist
       properties:
         NSPrincipalClass: NSApplication
         LSMinimumSystemVersion: $(MACOSX_DEPLOYMENT_TARGET)
@@ -71,7 +71,7 @@ targets:
                 - mdown
                 - mkd
     entitlements:
-      path: MDViewer/MDViewer.entitlements
+      path: FidMDViewer/FidMDViewer.entitlements
       properties:
         com.apple.security.app-sandbox: true
         com.apple.security.network.client: true
@@ -84,7 +84,7 @@ targets:
       - QuickLookExtension
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: net.fiddlythings.MDViewer.QuickLookExtension
+        PRODUCT_BUNDLE_IDENTIFIER: net.fiddlythings.FidMDViewer.QuickLookExtension
         ARCHS: "$(ARCHS_STANDARD)"
         ENABLE_HARDENED_RUNTIME: true
     dependencies:

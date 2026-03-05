@@ -2,10 +2,10 @@
 set -euo pipefail
 
 DEVELOPER_ID="Developer ID Application: Reagen Ward (7U6R5U85F6)"
-APP_NAME="MDViewer"
-SCHEME="MDViewer"
+APP_NAME="FidMDViewer"
+SCHEME="FidMDViewer"
 BUILD_DIR="build/Release"
-DMG_NAME="MDViewer.dmg"
+DMG_NAME="FidMDViewer.dmg"
 
 export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
 

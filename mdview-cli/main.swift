@@ -12,7 +12,7 @@ func printUsage() {
       --html -o <file>    Write rendered HTML to file
       -h, --help          Show this help message
 
-    Without --html, opens the file in MDViewer.app.
+    Without --html, opens the file in FidMDViewer.app.
     """
     print(usage)
 }
@@ -21,12 +21,12 @@ func openInApp(path: String) {
     let absolutePath = URL(fileURLWithPath: path).path
     let task = Process()
     task.launchPath = "/usr/bin/open"
-    task.arguments = ["-a", "MDViewer", absolutePath]
+    task.arguments = ["-a", "FidMDViewer", absolutePath]
     task.launch()
     task.waitUntilExit()
 
     if task.terminationStatus != 0 {
-        fputs("Error: Could not open MDViewer.app\n", stderr)
+        fputs("Error: Could not open FidMDViewer.app\n", stderr)
         exit(1)
     }
 }
@@ -36,7 +36,7 @@ func renderToHTML(inputPath: String, outputPath: String?) {
         let markdown = try String(contentsOfFile: inputPath, encoding: .utf8)
 
         // Load the render template from the app bundle's Resources
-        // When installed, mdview lives at MDViewer.app/Contents/Resources/mdview
+        // When installed, mdview lives at FidMDViewer.app/Contents/Resources/mdview
         let binaryURL = URL(fileURLWithPath: CommandLine.arguments[0]).resolvingSymlinksInPath()
         let resourcesDir = binaryURL.deletingLastPathComponent()
 
