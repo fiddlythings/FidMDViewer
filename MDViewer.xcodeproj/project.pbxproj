@@ -10,6 +10,7 @@
 		05E33FE69FA463A67F5641E8 /* MarkdownWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D84807468C8326268091E5 /* MarkdownWindowController.swift */; };
 		0A48E6DEF5C82CA973975264 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F3BFB8DF361827BBD77D6D /* AppDelegate.swift */; };
 		3EDB14296F7FA18745F25161 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1DB295AA2B34C30FDC2733 /* main.swift */; };
+		42D2EE216F561D3381E4D192 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8416F124345CD28D11536DF /* main.swift */; };
 		70D7AEF2D01DFE1F3B8D1CFD /* MarkdownRenderer in Frameworks */ = {isa = PBXBuildFile; productRef = 7FC7972D5A81E3FFF3D1D685 /* MarkdownRenderer */; };
 		A121330A5F4F472D34D7FBB3 /* MarkdownDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD3E4769F718A18A07E6247 /* MarkdownDocument.swift */; };
 		AAAC9C191CFC1CB6B001DA8E /* MarkdownRenderer in Frameworks */ = {isa = PBXBuildFile; productRef = 47D4CBB3FC386F2CDDF67E5C /* MarkdownRenderer */; };
@@ -57,6 +58,7 @@
 		6D1DB295AA2B34C30FDC2733 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		7CD85B3F24BD23F674DB5049 /* QuickLookExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuickLookExtension.entitlements; sourceTree = "<group>"; };
 		92F3BFB8DF361827BBD77D6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A8416F124345CD28D11536DF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B2B94D6ECFF439ABF8F84105 /* MDViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MDViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5D84807468C8326268091E5 /* MarkdownWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownWindowController.swift; sourceTree = "<group>"; };
 		B957DBF0BFDE40E61B2EAEBC /* MarkdownRenderer */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MarkdownRenderer; path = MarkdownRenderer; sourceTree = SOURCE_ROOT; };
@@ -118,6 +120,7 @@
 			children = (
 				92F3BFB8DF361827BBD77D6D /* AppDelegate.swift */,
 				0156BF9B3F2C1DE237234673 /* Info.plist */,
+				A8416F124345CD28D11536DF /* main.swift */,
 				2AD3E4769F718A18A07E6247 /* MarkdownDocument.swift */,
 				B5D84807468C8326268091E5 /* MarkdownWindowController.swift */,
 				FA57A9AF263F96706D2631FC /* MDViewer.entitlements */,
@@ -267,6 +270,7 @@
 				0A48E6DEF5C82CA973975264 /* AppDelegate.swift in Sources */,
 				A121330A5F4F472D34D7FBB3 /* MarkdownDocument.swift in Sources */,
 				05E33FE69FA463A67F5641E8 /* MarkdownWindowController.swift in Sources */,
+				42D2EE216F561D3381E4D192 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
