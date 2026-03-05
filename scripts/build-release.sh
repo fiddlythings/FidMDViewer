@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-DEVELOPER_ID="Developer ID Application: YOUR NAME (TEAM_ID)"
+DEVELOPER_ID="Developer ID Application: Reagen Ward (7U6R5U85F6)"
 APP_NAME="MDViewer"
 SCHEME="MDViewer"
 BUILD_DIR="build/Release"

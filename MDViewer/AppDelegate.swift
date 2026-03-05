@@ -23,6 +23,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let appMenu = NSMenu()
         appMenu.addItem(withTitle: "About MDViewer", action: #selector(NSApplication.orderFrontStandardAboutPanel(_:)), keyEquivalent: "")
         appMenu.addItem(NSMenuItem.separator())
+        appMenu.addItem(withTitle: "Install Command Line Tool…", action: #selector(installCommandLineTool(_:)), keyEquivalent: "")
+        appMenu.addItem(NSMenuItem.separator())
         appMenu.addItem(withTitle: "Quit MDViewer", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
         appMenuItem.submenu = appMenu
         mainMenu.addItem(appMenuItem)
@@ -63,5 +65,36 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSApp.windowsMenu = windowMenu
 
         NSApp.mainMenu = mainMenu
+    }
+
+    // MARK: - Install CLI
+
+    @objc func installCommandLineTool(_ sender: Any) {
+        let alert = NSAlert()
+        alert.messageText = "Install Command Line Tool"
+        alert.informativeText = "This will create a symlink at /usr/local/bin/mdview pointing to the CLI tool inside MDViewer.app.\n\nYou'll be prompted for your password."
+        alert.addButton(withTitle: "Install")
+        alert.addButton(withTitle: "Cancel")
+
+        guard alert.runModal() == .alertFirstButtonReturn else { return }
+
+        let source = Bundle.main.resourceURL!.appendingPathComponent("mdview").path
+        let script = "do shell script \"mkdir -p /usr/local/bin && ln -sf '\(source)' '/usr/local/bin/mdview'\" with administrator privileges"
+
+        let task = Process()
+        task.launchPath = "/usr/bin/osascript"
+        task.arguments = ["-e", script]
+        task.launch()
+        task.waitUntilExit()
+
+        let result = NSAlert()
+        if task.terminationStatus == 0 {
+            result.messageText = "Installed"
+            result.informativeText = "You can now use 'mdview' from the terminal."
+        } else {
+            result.messageText = "Installation Failed"
+            result.informativeText = "Could not create symlink. You may need to do it manually:\n\nln -sf '\(source)' /usr/local/bin/mdview"
+        }
+        result.runModal()
     }
 }
