@@ -21,6 +21,7 @@ targets:
         ARCHS: "$(ARCHS_STANDARD)"
         ENABLE_HARDENED_RUNTIME: true
         COMBINE_HIDPI_IMAGES: true
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
     dependencies:
       - package: MarkdownRenderer
       - target: QuickLookExtension
@@ -44,7 +45,6 @@ targets:
     info:
       path: FidMDViewer/Info.plist
       properties:
-        CFBundleIconFile: AppIcon
         NSPrincipalClass: NSApplication
         LSMinimumSystemVersion: $(MACOSX_DEPLOYMENT_TARGET)
         NSHumanReadableCopyright: "Created by Reagen Ward — rbward@gmail.com"

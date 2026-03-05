@@ -13,6 +13,7 @@
 		35F31938FCE977A0A5AFF892 /* MarkdownRenderer in Frameworks */ = {isa = PBXBuildFile; productRef = D10198BC8E990349EB183305 /* MarkdownRenderer */; };
 		45499CCE7D5AFCD98F85BFDB /* MarkdownDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525359DBF1BE86989072A213 /* MarkdownDocument.swift */; };
 		6686427452B7D13A68038F4F /* MarkdownRenderer in Frameworks */ = {isa = PBXBuildFile; productRef = 4188917B377F25D04E1D33DC /* MarkdownRenderer */; };
+		6B5DC71D4A4A9F88EFC01251 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0C69C01C8CA40F5462A2FBB /* Assets.xcassets */; };
 		7780F6F3265225E827465F65 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A7294707E0F46F137B875 /* PreviewViewController.swift */; };
 		7C614EBFD1F03E9E8ECF5310 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DABA74B902A5032068F955 /* AppDelegate.swift */; };
 		7C70D4D53C908B9E70E8AC53 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4840880369BB1C79509509BD /* main.swift */; };
@@ -62,6 +63,7 @@
 		7002C283E1299A26DE8D0F45 /* mdview */ = {isa = PBXFileReference; includeInIndex = 0; path = mdview; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E7B66F6545A5317945A350B /* QuickLookExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = QuickLookExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CD9662117155E608CF07829 /* FidMDViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FidMDViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0C69C01C8CA40F5462A2FBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B636546F3AF8483E7AEBC61F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BA0699033CF15EFF7E9FB310 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C9DABA74B902A5032068F955 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				C9DABA74B902A5032068F955 /* AppDelegate.swift */,
+				B0C69C01C8CA40F5462A2FBB /* Assets.xcassets */,
 				CA9C3677FF5EA93F9BA138B1 /* Credits.rtf */,
 				32A6077A9758FF4C5A8239B7 /* FidMDViewer.entitlements */,
 				B636546F3AF8483E7AEBC61F /* Info.plist */,
@@ -262,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E305FF5FE3B009880BF930D7 /* AppIcon.icns in Resources */,
+				6B5DC71D4A4A9F88EFC01251 /* Assets.xcassets in Resources */,
 				0B5AF6F4BAC69CD2E2BEFF65 /* Credits.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
