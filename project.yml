@@ -1,4 +1,4 @@
-name: FidMDViewer
+name: FTMarkdown
 options:
   bundleIdPrefix: net.fiddlythings
   deploymentTarget:
@@ -10,14 +10,14 @@ packages:
     path: MarkdownRenderer
 
 targets:
-  FidMDViewer:
+  FTMarkdown:
     type: application
     platform: macOS
     sources:
       - FidMDViewer
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: net.fiddlythings.FidMDViewer
+        PRODUCT_BUNDLE_IDENTIFIER: net.fiddlythings.FTMarkdown
         ARCHS: "$(ARCHS_STANDARD)"
         ENABLE_HARDENED_RUNTIME: true
         COMBINE_HIDPI_IMAGES: true
@@ -86,7 +86,7 @@ targets:
       - QuickLookExtension
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: net.fiddlythings.FidMDViewer.QuickLookExtension
+        PRODUCT_BUNDLE_IDENTIFIER: net.fiddlythings.FTMarkdown.QuickLookExtension
         ARCHS: "$(ARCHS_STANDARD)"
         ENABLE_HARDENED_RUNTIME: true
     dependencies:
