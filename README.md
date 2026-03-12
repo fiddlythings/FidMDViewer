@@ -1,4 +1,4 @@
-# FidMDViewer
+# FTMarkdown
 
 A native macOS markdown viewer with syntax highlighting, math rendering, and diagram support. View-only — no editing, no distractions.
 
@@ -16,26 +16,24 @@ A native macOS markdown viewer with syntax highlighting, math rendering, and dia
 
 ## Install
 
-Download the latest DMG from [Releases](https://github.com/fiddlythings/FidMDViewer/releases). Open the DMG and drag FidMDViewer to your Applications folder.
-
-> **Note:** The app is not yet notarized. On first launch, right-click > Open and click "Open" in the Gatekeeper dialog.
+Download the latest DMG from [Releases](https://github.com/fiddlythings/FTMarkdown/releases). Open the DMG and drag FTMarkdown to your Applications folder.
 
 Or build from source:
 
 ```bash
 # Requires Xcode and xcodegen
 brew install xcodegen
-git clone https://github.com/fiddlythings/FidMDViewer.git
-cd FidMDViewer
+git clone https://github.com/fiddlythings/FTMarkdown.git
+cd FTMarkdown
 xcodegen generate
-xcodebuild -project FidMDViewer.xcodeproj -scheme FidMDViewer -configuration Release build
+xcodebuild -project FTMarkdown.xcodeproj -scheme FTMarkdown -configuration Release build
 ```
 
 ## Usage
 
 **Open a file:**
-- Double-click a `.md` file (after setting FidMDViewer as the default viewer)
-- Right-click a `.md` file > Open With > FidMDViewer
+- Double-click a `.md` file (after setting FTMarkdown as the default viewer)
+- Right-click a `.md` file > Open With > FTMarkdown
 - File > Open (Cmd+O) from within the app
 - `mdview myfile.md` from the terminal (after installing the CLI tool)
 
@@ -43,17 +41,17 @@ xcodebuild -project FidMDViewer.xcodeproj -scheme FidMDViewer -configuration Rel
 After running the app once, press spacebar on any `.md` file in Finder to see a rendered preview.
 
 **CLI tool:**
-Install via FidMDViewer > Install Command Line Tool, then:
+Install via FTMarkdown > Install Command Line Tool, then:
 
 ```bash
-mdview README.md                     # Open in FidMDViewer
+mdview README.md                     # Open in FTMarkdown
 mdview --html README.md              # Print rendered HTML to stdout
 mdview --html -o output.html README.md  # Write HTML to file
 ```
 
 ## Architecture
 
-FidMDViewer renders markdown client-side in a WKWebView using bundled JavaScript libraries:
+FTMarkdown renders markdown client-side in a WKWebView using bundled JavaScript libraries:
 
 - [markdown-it](https://github.com/markdown-it/markdown-it) — CommonMark parsing with GFM extensions
 - [highlight.js](https://highlightjs.org/) — Syntax highlighting
@@ -64,7 +62,7 @@ The app is a single Xcode project with three targets sharing a common `MarkdownR
 
 | Target | Description |
 |--------|-------------|
-| FidMDViewer | Standalone NSDocument-based viewer app |
+| FTMarkdown | Standalone NSDocument-based viewer app |
 | QuickLookExtension | Finder Quick Look preview extension |
 | mdview | Command-line tool |
 
