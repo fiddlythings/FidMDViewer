@@ -21,11 +21,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // App menu
         let appMenuItem = NSMenuItem()
         let appMenu = NSMenu()
-        appMenu.addItem(withTitle: "About FidMDViewer", action: #selector(NSApplication.orderFrontStandardAboutPanel(_:)), keyEquivalent: "")
+        appMenu.addItem(withTitle: "About FTMarkdown", action: #selector(NSApplication.orderFrontStandardAboutPanel(_:)), keyEquivalent: "")
         appMenu.addItem(NSMenuItem.separator())
         appMenu.addItem(withTitle: "Install Command Line Tool…", action: #selector(installCommandLineTool(_:)), keyEquivalent: "")
         appMenu.addItem(NSMenuItem.separator())
-        appMenu.addItem(withTitle: "Quit FidMDViewer", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
+        appMenu.addItem(withTitle: "Quit FTMarkdown", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
         appMenuItem.submenu = appMenu
         mainMenu.addItem(appMenuItem)
 
@@ -72,7 +72,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc func installCommandLineTool(_ sender: Any) {
         let alert = NSAlert()
         alert.messageText = "Install Command Line Tool"
-        alert.informativeText = "This will create a symlink at /usr/local/bin/mdview pointing to the CLI tool inside FidMDViewer.app.\n\nYou'll be prompted for your password."
+        alert.informativeText = "This will create a symlink at /usr/local/bin/mdview pointing to the CLI tool inside FTMarkdown.app.\n\nYou'll be prompted for your password."
         alert.addButton(withTitle: "Install")
         alert.addButton(withTitle: "Cancel")
 
