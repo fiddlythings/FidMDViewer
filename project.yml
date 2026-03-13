@@ -117,3 +117,4 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: net.fiddlythings.mdview
         ARCHS: "$(ARCHS_STANDARD)"
+        ENABLE_HARDENED_RUNTIME: true
